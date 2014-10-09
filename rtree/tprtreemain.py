@@ -9,8 +9,6 @@ import ctypes
 import tprtree
 
 
-twodouble = ctypes.c_double * 2
-
 teststreet = {
     "type": "Feature",
     "geometry": {
@@ -83,4 +81,6 @@ if __name__ == '__main__':
     
     ids_list = list(idx.intersection((qleft, qbottom, qright, qtop), (qleftv, qbottomv, qrightv, qtopv), qtstart, qtend))
     print ids_list
-      
+    
+    objs_list =  [n.object for n in idx.intersection((qleft, qbottom, qright, qtop), (qleftv, qbottomv, qrightv, qtopv), qtstart, qtend, objects=True)]
+    print objs_list  
